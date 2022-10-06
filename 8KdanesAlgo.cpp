@@ -5,7 +5,7 @@ using namespace std;
 class KdaneAlgo{
     public:
         int largestContiguousSum(vector<int> &v, int size){
-            int sum=0, max = INT8_MIN;
+            int sum=0, max = v[0];
             for(int i=0;i<size;i++){
                 sum+=v[i];
                 if(max<sum)

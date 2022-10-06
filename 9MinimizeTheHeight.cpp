@@ -15,15 +15,17 @@ class sample{
             return b;
         }
         int minimizeHeight(vector<int> &v, int size, int k){
-            int ma, mi, ans, i;
+            int ma, mi, ans, i, smallest, largest;
             ans = v[size-1] - v[0];
             ma = v[size-1];
             mi = v[0];
-            for(i=1;i<size;i++){
+            smallest = v[0]+k;
+            largest = v[size-1]-k;
+            for(i=0;i<size-1;i++){
                 if(v[i]-k<0)
                     continue;
-                mi = min(v[0]+k, v[i]-k);
-                ma = max(v[size-1]-k, v[i-1]+k);
+                mi = min(smallest, v[i+1]-k);
+                ma = max(largest, v[i]+k);
                 ans = min(ans, ma-mi);
             }
             return ans;
