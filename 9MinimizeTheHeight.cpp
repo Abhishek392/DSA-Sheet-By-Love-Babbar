@@ -22,7 +22,7 @@ class sample{
             smallest = v[0]+k;
             largest = v[size-1]-k;
             for(i=0;i<size-1;i++){
-                if(v[i]-k<0)
+                if(v[i+1]-k<0)
                     continue;
                 mi = min(smallest, v[i+1]-k);
                 ma = max(largest, v[i]+k);
